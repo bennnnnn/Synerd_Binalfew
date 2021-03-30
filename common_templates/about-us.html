@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+{% block content %}
+
+<div class="full-row mb-5">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12 col-lg-12 mt-5">
+                <h3 style="color: #2cc3d0 !important;" class="double-down-line-left  position-relative pb-4 mb-4 mt-5">
+                  About us
+                  </h3>
+            </div>
+        </div>
+        <div class="row about-company">
+            <div class="col-md-12 col-lg-7">
+                <div class="about-content">
+                    <p>Lorem ipsum dolor sit amet </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit! </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    
+                  </div>
+            </div>
+            <div class="col-md-12 col-lg-5">
+                <div class="about-img">
+                  <img style="width:100%" src="{% static 'images/image1.png'%}" alt=""> </div>
+            </div>
+        </div>
+        
+           <div class="row about-company">
+            <div class="col-md-12 col-lg-7">
+                <div class="about-content">
+                    <p>Lorem ipsum dolor sit amet </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit! </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    
+                  </div>
+            </div>
+            <div class="col-md-100 col-lg-50">
+                <div class="about-img">
+                  <img style="width:100%" src="{% static 'images/image1.png'%}" alt=""> </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock footer %}

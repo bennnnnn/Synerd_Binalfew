@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block navbar %}
+{% include 'navbar.html' %}
+{% endblock navbar %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row mt-5">
+        <div class="col">
+            <div class="full-row pt-0 mb-5 mt-5">
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h2 class=" double-down-line text-center mb-3">
+                                Get In Touch
+                            </h2>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form id="contact-form" class="w-100" method="POST">
+                                {% csrf_token %}
+
+                                {% if messages %}
+                                {% for message in messages %}
+                                {% if message %}
+                                <div class="alert alert-{{ state|default:'success' }} {% if dismissible|default:True %} alert-dismissible {% endif %} fade show" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                    </button>
+
+                                    {{ message }}
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+
+                                {% endif %}
+
+
+                                <div class="row mt-4">
+                                    <div class="col-lg-6 mt-4">
+                                        <div class="form-group">
+                                            <input type="text" id="full_name" name="full_name" class="form-control bg-gray" placeholder="Your Full Name*" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" id="email" name="email" class="form-control bg-gray" placeholder="Email Address*" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" id="subject" name="subject" class="form-control bg-gray" placeholder="Subject" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mt-4">
+                                        <div class="form-group">
+                                            <textarea id="message" name="message" class="form-control bg-gray" rows="5" placeholder="Type Your Message here..."></textarea>
+                                        </div>
+
+                                        <button type="submit" id="send" value="send message" class="btn btn-primary ">
+                                            Send Message
+                                        </button>
+
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="error-handel">
+                                            <div class="d-none" id="success">
+                                                Your email sent Successfully, Thank you.
+                                            </div>
+                                            <div class="d-none" id="error">
+                                                Error occurred while sending email. Please try again
+                                                later.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+ 

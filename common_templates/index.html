@@ -1,0 +1,305 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/custom.css'%}">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <a class="navbar-brand" href="/">SynerD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                {% if  request.user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'accounts:login-page'%}">Welcome {{request.user}} <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'accounts:logout'%}">Logout<span class="sr-only">(current)</span></a>
+                </li>
+                {% else %}
+
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'accounts:login-page'%}">Login <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'accounts:register-page'%}">Join Us <span class="sr-only">(current)</span></a>
+                </li>
+
+
+
+                {% endif %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Donate <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-4" href="{% url 'accounts:galleries-page'%}">Galleries <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-4" href="{% url 'accounts:aboutus-page'%}">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-5" href="{% url 'accounts:contactus-page'%}">Contact Us <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+    <div id="header-holder" class="main-header mt-1" style="margin-top:15rem !important">
+        <div class="bg-animation">
+            <div class="graphic-show">
+                <img class="fix-size" src="{% static 'images/graphic1.png' %}" alt="">
+                <img class="img img1" src="{% static 'images/graphic1.png'%}" alt="">
+                <img class="img img2" src="{% static 'images/graphic2.png'%}" alt="">
+                <img class="img img3" src="{% static 'images/graphic3.png'%}" alt="">
+            </div>
+        </div>
+
+        <div id="top-content" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="main-slider">
+                            <div class="slide">
+                                <div class="noti-holder">
+                                    <a href="#">
+                                        <div class="noti">
+                                            <span class="badge">New</span><span class="text">Welcome to synerD, Synergy of Diaspora.</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="big-title">Saving Children Around the <span>,World</span><br> </div>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus blanditiis atque corrupti quos dolores et quas molestias.</p>
+                                <div class="btn-holder">
+                                    <a href="{% url 'accounts:register-page'%}" class="ybtn ybtn-header-color">Join Us!</a><a href="{% url 'accounts:contactus-page'%}" class="ybtn ybtn-white ybtn-shadow">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="header-graphic" src="{% static 'images/graphic1.png'%}" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="info" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-text">adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</div>
+
+                    <a href="{% url 'accounts:register-page'%}" class="ybtn ybtn-accent-color ybtn-shadow">Create Your Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row-title">Our Services</div>
+                    <div class="row-subtitle"> Explore our services</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-box">
+
+                        <div class="service-title"><a href="#">Health </a></div>
+                        <div class="service-details">
+                            <p>At vero eos et accusamus et iusto odio dignissimos
+                                ducimus qui blanditiis praesentium voluptatum div
+                                atque corrupti quos dolores et quas molestias.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-box">
+
+                        <div class="service-title"><a href="#">Education</a></div>
+                        <div class="service-details">
+                            <p>At vero eos et accusamus et iusto odio dignissimos
+                                ducimus qui blanditiis praesentium voluptatum div
+                                atque corrupti quos dolores et quas molestias.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-box">
+
+                        <div class="service-title"><a href="#">Food Asistance</a></div>
+                        <div class="service-details">
+                            <p>At vero eos et accusamus et iusto odio dignissimos
+                                ducimus qui blanditiis praesentium voluptatum div
+                                atque corrupti quos dolores et quas molestias.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-box">
+
+                        <div class="service-title"><a href="#">Advocacy</a></div>
+                        <div class="service-details">
+                            <p>At vero eos et accusamus et iusto odio dignissimos
+                                ducimus qui blanditiis praesentium voluptatum div
+                                atque corrupti quos dolores et quas molestias.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="more-features" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row-title">Saving Lives</div>
+                    <div class="row-subtitle"> Countries We Operate In.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="mfeature-box">
+                        <div class="mfeature-icon">
+                            <i class="htfy htfy-trophy"></i>
+                        </div>
+                        <div class="mfeature-title">Yemen</div>
+                        <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="mfeature-box">
+                        <div class="mfeature-icon">
+                            <i class="htfy htfy-like"></i>
+                        </div>
+                        <div class="mfeature-title">South Sudan</div>
+                        <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="mfeature-box">
+                        <div class="mfeature-icon">
+                            <i class="htfy htfy-cogwheel"></i>
+                        </div>
+                        <div class="mfeature-title">Somalia</div>
+                        <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="message2" class="container-fluid message-area normal-bg boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="text-other-color1">Please, Join Us</div>
+                    <div class="text-other-color2">create an account, or contact us.</div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="buttons-holder">
+                        <a href="{% url 'accounts:register-page'%}" class="ybtn ybtn-accent-color">Join Us Now!</a><a href="{% url 'accounts:contactus-page'%}" class="ybtn ybtn-white ybtn-shadow">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    </div>
+    {% block style %}
+<style>
+.gallery-block{
+	padding-bottom: 60px;
+	padding-top: 60px;
+}
+
+.gallery-block .heading{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.gallery-block .heading h2{
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.gallery-block.cards-gallery h6 {
+  font-size: 17px;
+  font-weight: bold; 
+}
+
+.gallery-block.cards-gallery .card{
+  transition: 0.4s ease; 
+}
+
+.gallery-block.cards-gallery .card img {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.gallery-block.cards-gallery .card-body {
+  text-align: center; 
+}
+
+.gallery-block.cards-gallery .card-body p {
+  font-size: 15px; 
+}
+
+.gallery-block.cards-gallery a {
+  color: #212529; 
+}
+
+.gallery-block.cards-gallery a:hover {
+  text-decoration: none; 
+}
+
+.gallery-block.cards-gallery .card {
+  margin-bottom: 30px; 
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 576px) {
+
+	.gallery-block .transform-on-hover:hover {
+	    transform: translateY(-10px) scale(1.02);
+	    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.15) !important; 
+	}
+}
+</style>
+{% endblock %}
+
+{% block footer %}
+{% include 'footer.html' %}
+{% endblock footer %}
+</body>
+
+</html>

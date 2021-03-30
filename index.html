@@ -1,0 +1,260 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/custom.css'%}">
+    <style>
+        a:hover {
+            background-color: green;
+            border-radius: 35px;
+            color: white !important;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">SynerD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                {% if  request.user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'accounts:login-page'%}">Welcome {{request.user}} <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'accounts:logout'%}">Logout<span class="sr-only">(current)</span></a>
+                </li>
+                {% else %}
+
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'accounts:login-page'%}">Login <span class="sr-only">(current)</span></a>
+                </li>
+
+
+                <li class="nav-item active">
+                    <a class="nav-link " href="{% url 'accounts:register-page'%}">Join Us <span class="sr-only">(current)</span></a>
+                </li>
+
+
+
+                {% endif %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Donate <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-4" href="{% url 'accounts:galleries-page'%}">Galleries <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-4" href="{% url 'accounts:aboutus-page'%}">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mr-5" href="{% url 'accounts:contactus-page'%}">Contact Us <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+
+    <div id="header-holder" class="main-header mt-5" style="margin-top:4rem !important">
+        <div class="bg-animation">
+            <div class="graphic-show">
+                <img class="fix-size" src="{% static 'images/graphic1.png' %}" alt="">
+                <img class="img img1" src="{% static 'images/graphic1.png'%}" alt="">
+                <img class="img img2" src="{% static 'images/graphic2.png'%}" alt="">
+                <img class="img img3" src="{% static 'images/graphic3.png'%}" alt="">
+            </div>
+        </div>
+
+        <div id="top-content" class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="main-slider">
+                            <div class="slide">
+                                <div class="noti-holder">
+                                    <a href="#">
+                                        <div class="noti">
+                                            <span class="badge">New</span><span class="text">Welcome to synerD </span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="big-title">Your very <span>own space,</span><br>anywhere, anytime.</div>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus blanditiis atque corrupti quos dolores et quas molestias.</p>
+                                <div class="btn-holder">
+                                    <a href="{% url 'accounts:register-page'%}" class="ybtn ybtn-header-color">Register</a><a href="{% url 'accounts:contactus-page'%}" class="ybtn ybtn-white ybtn-shadow">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <img class="header-graphic" src="{% static 'images/graphic1.png'%}" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="info" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info-text">adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</div>
+
+                    <a href="{% url 'accounts:register-page'%}" class="ybtn ybtn-accent-color ybtn-shadow">Create Your Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row-title">Our Services</div>
+                    <div class="row-subtitle">Designed to satisfy your creative needs.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="{% static 'images/service-icon1.svg'%}" alt="">
+                        </div>
+                        <div class="service-title"><a href="webhosting.html">Web Hosting</a></div>
+                        <div class="service-details">
+                            <p>At vero eos et accusamus et iusto odio dignissimos
+                                ducimus qui blanditiis praesentium voluptatum div
+                                atque corrupti quos dolores et quas molestias.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="{% static 'images/service-icon2.svg'%}" alt="">
+                        </div>
+                        <div class="service-title"><a href="#">Resellers</a></div>
+                        <div class="service-details">
+                            <p>At vero eos et accusamus et iusto odio dignissimos
+                                ducimus qui blanditiis praesentium voluptatum div
+                                atque corrupti quos dolores et quas molestias.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="{% static 'images/service-icon3.svg'%}" alt="">
+                        </div>
+                        <div class="service-title"><a href="#">VPS Hosting</a></div>
+                        <div class="service-details">
+                            <p>At vero eos et accusamus et iusto odio dignissimos
+                                ducimus qui blanditiis praesentium voluptatum div
+                                atque corrupti quos dolores et quas molestias.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="{% static 'images/service-icon4.svg'%}" alt="">
+                        </div>
+                        <div class="service-title"><a href="#">Cloud Hosting</a></div>
+                        <div class="service-details">
+                            <p>At vero eos et accusamus et iusto odio dignissimos
+                                ducimus qui blanditiis praesentium voluptatum div
+                                atque corrupti quos dolores et quas molestias.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="more-features" class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row-title">Our Promise</div>
+                    <div class="row-subtitle">Your satisfaction is guaranteed. Indeed.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="mfeature-box">
+                        <div class="mfeature-icon">
+                            <i class="htfy htfy-trophy"></i>
+                        </div>
+                        <div class="mfeature-title">%99.9 Uptime</div>
+                        <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="mfeature-box">
+                        <div class="mfeature-icon">
+                            <i class="htfy htfy-like"></i>
+                        </div>
+                        <div class="mfeature-title">Money Back Guarantee</div>
+                        <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="mfeature-box">
+                        <div class="mfeature-icon">
+                            <i class="htfy htfy-cogwheel"></i>
+                        </div>
+                        <div class="mfeature-title">Best Support</div>
+                        <div class="mfeature-details">Mauris at libero sed justo pretium maximus ac non ex. Donec sit amet ultrices dolo.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="message2" class="container-fluid message-area normal-bg boxed">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="text-other-color1">Are you ready?</div>
+                    <div class="text-other-color2">create an account, or contact us.</div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="buttons-holder">
+                        <a href="{% url 'accounts:register-page'%}" class="ybtn ybtn-accent-color">Create Your Account</a><a href="{% url 'accounts:contactus-page'%}" class="ybtn ybtn-white ybtn-shadow">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>
